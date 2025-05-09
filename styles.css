@@ -1,0 +1,238 @@
+/* Estilos Generales y Reseteo Básico */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente legible */
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo suave */
+    color: #333; /* Color de texto principal */
+    display: flex; /* Para el footer pegajoso */
+    flex-direction: column; /* Para el footer pegajoso */
+    min-height: 100vh; /* Para el footer pegajoso */
+}
+
+/* Contenedor principal para centrar contenido */
+.container {
+    width: 80%;
+    max-width: 960px; /* Ancho máximo */
+    margin: auto;
+    overflow: hidden; /* Limpia floats internos si los hubiera */
+    padding: 0 20px;
+}
+
+/* Encabezado Principal */
+header {
+    background-color: #333; /* Fondo oscuro para el header */
+    color: #fff; /* Texto blanco */
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: #0779e4 3px solid; /* Un acento de color */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Tamaño grande para el título principal */
+}
+
+header .subtitle {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Barra de Navegación */
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky; /* Navegación pegajosa */
+    top: 0; /* Se pega en la parte superior */
+    z-index: 1000; /* Para que esté por encima de otros elementos */
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Quita los puntos de la lista */
+}
+
+nav ul li {
+    display: inline; /* Elementos en línea */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Transición suave para el hover */
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #0779e4; /* Color al pasar el mouse o enfocar */
+    /* border-bottom: 2px solid #0779e4; */ /* Opcional: subrayado al pasar el mouse */
+}
+
+/* Contenido Principal y Secciones */
+main {
+    flex-grow: 1; /* Para el footer pegajoso, hace que main ocupe el espacio disponible */
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto; /* Margen superior e inferior */
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra sutil */
+    border-radius: 8px;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee; /* Separador ligero entre secciones */
+}
+
+section:last-child {
+    border-bottom: none; /* No hay separador en la última sección */
+}
+
+section h2 {
+    color: #0779e4; /* Color de acento para los títulos de sección */
+    margin-top: 0;
+    font-size: 2em;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el código en línea */
+code {
+    background-color: #e8e8e8;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+}
+
+/* Estilos para las analogías */
+.analogy {
+    background-color: #e6f7ff; /* Fondo azul claro */
+    border-left: 5px solid #0779e4; /* Borde izquierdo de acento */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.analogy p:first-child {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+/* Estilos para los ejemplos interactivos */
+.interactive-example {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+.interactive-example input[type="text"] {
+    width: calc(100% - 110px); /* Ajusta el ancho para que quepa el botón */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.interactive-example button {
+    padding: 10px 15px;
+    background-color: #0779e4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease;
+}
+
+.interactive-example button:hover {
+    background-color: #055aab;
+}
+
+.output-box {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    min-height: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilos para tokens en el output */
+#tokenOutput span {
+    display: inline-block;
+    background-color: #0779e4;
+    color: white;
+    padding: 5px 8px;
+    margin: 3px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Estilos para palabras clickeables de embeddings */
+.clickable-words span {
+    display: inline-block;
+    background-color: #5cb85c; /* Verde para diferenciar */
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clickable-words span:hover {
+    background-color: #4cae4c;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Para el footer pegajoso */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Media Queries para Responsividad (Ejemplo Básico) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav ul li {
+        display: block; /* Elementos de navegación en bloque en móviles */
+        margin: 10px 0;
+    }
+    .interactive-example input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px; /* Espacio debajo del input antes del botón */
+    }
+    .interactive-example button {
+        width: 100%;
+    }
+}

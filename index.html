@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA al Descubierto: Entendiendo las Máquinas de Texto</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+
+    <header>
+        <h1>IA al Descubierto: Entendiendo cómo "Piensan" las Máquinas de Texto</h1>
+        <p class="subtitle">(Pista: ¡Es Pura Matemática!)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#ia-calculadora">IA Calculadora</a></li>
+            <li><a href="#tokens">Tokens</a></li>
+            <li><a href="#embeddings">Embeddings</a></li>
+            <li><a href="#entrenamiento">Entrenamiento</a></li>
+            <li><a href="#piensa-ia">¿Piensa la IA?</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="introduccion">
+            <h2>¡Bienvenido/a al Corazón de la Inteligencia Artificial de Texto!</h2>
+            <p>¿Alguna vez te has maravillado de cómo un chatbot te responde o cómo una IA puede generar un artículo completo? Parece magia, ¿verdad? Pero detrás de esa "inteligencia" hay un mundo fascinante de matemáticas, datos y algoritmos ingeniosos.</p>
+            <p>En esta "Clase 1", vamos a levantar el capó de la IA de texto. Olvídate de robots con conciencia propia por un momento. Lo que descubrirás es que la IA actual, especialmente la que trabaja con lenguaje, es una <strong>calculadora superpotente y experta en reconocer patrones</strong>, más que una mente pensante como la tuya o la mía.</p>
+            <h3>Nuestro objetivo:</h3>
+            <ul>
+                <li>Entenderás por qué decimos que la IA <strong>calcula y no (aún) piensa</strong>.</li>
+                <li>Descubrirás qué son los <strong>Tokens</strong>: los pequeños bloques de construcción del lenguaje para la IA.</li>
+                <li>Aprenderás qué son los <strong>Embeddings</strong>: el truco para que las palabras tengan "sentido" numérico para las máquinas.</li>
+            </ul>
+            <p>¡Prepárate para un viaje al núcleo de la IA, explicado de forma sencilla!</p>
+        </section>
+
+        <section id="ia-calculadora">
+            <h2>Sección 1: La IA de Texto – Un Genio de los Patrones, No un Filósofo</h2>
+            <p>Cuando interactúas con una IA de texto, como ChatGPT, podrías pensar que "entiende" tus preguntas y "piensa" en las respuestas. Pero la realidad es más técnica (¡y no menos impresionante!).</p>
+            <ul>
+                <li><strong>La IA no "comprende" como un humano:</strong> No tiene experiencias, sentimientos ni conciencia del mundo real. No sabe <em>qué es</em> un perro, solo cómo se usa la palabra "perro" en millones de frases.</li>
+                <li><strong>Se basa en el cálculo y la probabilidad:</strong> Imagina que has leído todos los libros del mundo. Si te digo "El gato se subió al...", es muy probable que sepas que palabras como "tejado", "árbol" o "sofá" son candidatas probables. La IA hace algo similar, pero a una escala masiva y con modelos matemáticos complejos.</li>
+                <li><strong>Aprende de ejemplos (¡muchísimos!):</strong> Se "entrena" con enormes cantidades de texto (libros, artículos, páginas web). Durante este entrenamiento, la IA ajusta millones de parámetros internos para ser buena prediciendo la siguiente palabra en una secuencia, o clasificando texto, o traduciendo, etc.</li>
+                <li><strong>"Inteligencia" emergente:</strong> Su aparente inteligencia surge de su capacidad para procesar y relacionar estos patrones lingüísticos a una velocidad y escala sobrehumanas. Es una forma de inteligencia muy específica y orientada a tareas.</li>
+            </ul>
+            <div class="analogy">
+                <p><strong>Analogía del Meteorólogo:</strong></p>
+                <p>Piensa en un meteorólogo experto. Analiza enormes cantidades de datos históricos y actuales (temperatura, presión, vientos) usando modelos matemáticos para predecir el tiempo. No "siente" si va a llover, pero sus cálculos le dan una alta probabilidad. La IA de texto es similar: analiza patrones en el lenguaje para "predecir" la respuesta más coherente o relevante.</p>
+            </div>
+        </section>
+
+        <section id="tokens">
+            <h2>Sección 2: Tokens – Descomponiendo el Lenguaje para las Máquinas</h2>
+            <p>Para que una IA pueda "procesar" texto, primero necesita dividirlo en piezas manejables. Estas piezas se llaman <strong>tokens</strong>.</p>
+            <h3>¿Qué es un Token?</h3>
+            <p>Es la unidad básica en la que la IA segmenta el texto. Un token puede ser:</p>
+            <ul>
+                <li>Una palabra completa: <code>["El", "gato", "negro"]</code></li>
+                <li>Una sub-palabra: <code>["Inteligen", "cia", "Artific", "ial"]</code> (útil para palabras raras o compuestas)</li>
+                <li>Un carácter: <code>["H", "o", "l", "a"]</code> (menos común para modelos grandes, pero es una posibilidad)</li>
+            </ul>
+            <h3>¿Por qué Tokenizar?</h3>
+            <ol>
+                <li><strong>Manejo Numérico:</strong> Las computadoras no entienden "gato". Pero si "gato" es el token número 587 de su vocabulario, ya tienen un identificador numérico.</li>
+                <li><strong>Vocabulario Finito:</strong> Aunque el lenguaje es vasto, los tokenizadores buscan crear un vocabulario manejable de tokens frecuentes. Las palabras raras se pueden construir a partir de sub-tokens.</li>
+                <li><strong>Consistencia:</strong> Asegura que el texto se procese de manera uniforme.</li>
+            </ol>
+            
+            <div class="interactive-example">
+                <h3>¡Pruébalo tú mismo! Tokenizador Simple:</h3>
+                <p>Escribe una frase y mira cómo se "tokeniza" (se divide en palabras):</p>
+                <input type="text" id="textInput" placeholder="Escribe tu frase aquí...">
+                <button id="tokenizeButton">Tokenizar</button>
+                <div id="tokenOutput" class="output-box">
+                    </div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Analogía de los Legos:</strong></p>
+                <p>Piensa en los tokens como las piezas de Lego del lenguaje. Antes de construir algo (entender o generar texto), necesitas separar las piezas. El tokenizador es la máquina que desarma las frases en esos ladrillos básicos.</p>
+            </div>
+        </section>
+
+        <section id="embeddings">
+            <h2>Sección 3: Embeddings – Dando "Significado" Numérico a las Palabras</h2>
+            <p>Vale, tenemos tokens (que son como identificadores). Pero, ¿cómo sabe la IA que "rey" y "reina" están relacionados, o que "perro" y "gato" son tipos de animales, mientras que "coche" es diferente? Aquí entran en juego los <strong>embeddings</strong>.</p>
+            <h3>¿Qué es un Embedding?</h3>
+            <p>Un embedding es una <strong>representación numérica de un token (generalmente una palabra) en forma de vector</strong>. Un vector es simplemente una lista de números (por ejemplo, <code>[0.2, -0.5, 0.8, ..., 0.1]</code>). Estos vectores suelen tener cientos o miles de dimensiones (números).</p>
+            <h3>La Magia de los Embeddings:</h3>
+            <ul>
+                <li><strong>Capturan Relaciones Semánticas:</strong> Lo increíble es que, durante el entrenamiento, el modelo aprende a asignar estos vectores de tal manera que las palabras con significados similares o que se usan en contextos parecidos terminan teniendo vectores "cercanos" en ese espacio numérico multidimensional.</li>
+                <li><strong>Operaciones Matemáticas con Significado (Conceptual):</strong> Esto permite hacer cosas asombrosas como:
+                <br><code>vector("rey") - vector("hombre") + vector("mujer") ≈ vector("reina")</code>
+                <br>Esto significa que la relación "hombre es a rey como mujer es a reina" se puede capturar matemáticamente.</li>
+            </ul>
+            <h3>¿Cómo se Crean?</h3>
+            <p>Los embeddings no se definen a mano. Se <em>aprenden</em>. Durante el entrenamiento del modelo de lenguaje (por ejemplo, al predecir la siguiente palabra en millones de frases), la red neuronal ajusta estos vectores para que sean útiles para la tarea. Aquellos tokens que aparecen en contextos similares naturalmente desarrollarán embeddings similares.</p>
+
+            <div class="interactive-example">
+                <h3>Visualización Conceptual de Embeddings:</h3>
+                <p>Haz clic en una palabra para ver un "vector" numérico representativo (¡OJO! Estos son solo ejemplos ilustrativos, no embeddings reales):</p>
+                <div class="clickable-words">
+                    <span class="word-embed" data-word="Rey">Rey</span>
+                    <span class="word-embed" data-word="Reina">Reina</span>
+                    <span class="word-embed" data-word="Hombre">Hombre</span>
+                    <span class="word-embed" data-word="Mujer">Mujer</span>
+                    <span class="word-embed" data-word="Manzana">Manzana</span>
+                    <span class="word-embed" data-word="Naranja">Naranja</span>
+                </div>
+                <div id="embeddingOutput" class="output-box">
+                    </div>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Analogía del Mapa Estelar:</strong></p>
+                <p>Imagina un mapa estelar gigantesco donde cada estrella es una palabra/token. La <strong>posición</strong> de cada estrella en el mapa son sus coordenadas (su vector de embedding). Las estrellas que forman parte de la misma <strong>constelación</strong> o que están muy cerca unas de otras son palabras relacionadas semánticamente. Los embeddings son esas coordenadas que le dicen a la IA dónde se "ubica" una palabra en relación con todas las demás en términos de significado y uso.</p>
+            </div>
+        </section>
+
+        <section id="entrenamiento">
+            <h2>Sección 4: Un Vistazo al "Entrenamiento" – Ajustando los Cálculos</h2>
+            <p>Ya vimos un ejemplo de código ultra-básico donde "entrenar" era contar frecuencias. En la IA real, es mucho más complejo, involucrando <strong>redes neuronales</strong>.</p>
+            <ol>
+                <li><strong>La Red Neuronal:</strong> Piensa en ella como una estructura de muchas capas de "neuronas" interconectadas (nodos de cálculo). Cada conexión tiene un "peso" (un número) que determina la importancia de la señal que pasa por ella. Los embeddings son, de hecho, parte de los pesos que la red aprende en sus primeras capas.</li>
+                <li><strong>El Objetivo:</strong> El modelo se entrena para una tarea específica, por ejemplo, predecir la siguiente palabra en una frase.</li>
+                <li><strong>El Proceso (Simplificado):</strong>
+                    <ul>
+                        <li>Se le da al modelo una frase de entrada (ya tokenizada y convertida a embeddings).</li>
+                        <li>El modelo realiza una serie de cálculos a través de sus capas para producir una predicción (ej: la probabilidad de cada palabra en el vocabulario de ser la siguiente).</li>
+                        <li>Se compara la predicción con la palabra real que seguía en el texto de entrenamiento.</li>
+                        <li>Si hay un error, un algoritmo (como la "retropropagación") ajusta ligeramente los millones de pesos (incluyendo los que definen los embeddings) en toda la red para que la próxima vez, la predicción sea un poco mejor.</li>
+                    </ul>
+                </li>
+                <li><strong>Repetición Masiva:</strong> Este proceso se repite millones o miles de millones de veces con enormes cantidades de datos. Lentamente, los pesos se van ajustando hasta que el modelo se vuelve muy bueno en su tarea.</li>
+            </ol>
+            <p>Es un proceso de <strong>optimización matemática</strong>: encontrar el conjunto de números (pesos) que minimiza el error de predicción en los datos de entrenamiento.</p>
+        </section>
+
+        <section id="piensa-ia">
+            <h2>Sección 5: Entonces, ¿la IA "Piensa" o Solo Calcula?</h2>
+            <p>Después de todo esto, volvemos a la pregunta inicial.</p>
+            <ul>
+                <li><strong>Actualmente, la IA calcula:</strong> Realiza operaciones matemáticas increíblemente complejas sobre representaciones numéricas de texto. Identifica patrones, correlaciones y probabilidades con una eficacia asombrosa.</li>
+                <li><strong>No hay "comprensión" profunda ni conciencia (como la entendemos en humanos):</strong> No tiene intenciones propias, creencias, ni una comprensión del mundo físico o social más allá de los patrones que encontró en el texto.</li>
+                <li><strong>Sus "decisiones" son el resultado de su entrenamiento:</strong> Cuando una IA genera una respuesta, está eligiendo la secuencia de tokens que, según sus cálculos y los patrones aprendidos, es la más probable o coherente dada la entrada.</li>
+            </ul>
+            <div class="analogy">
+                <p><strong>Analogía Final del Motor de Búsqueda Avanzado:</strong></p>
+                <p>Un motor de búsqueda como Google puede encontrar información increíblemente relevante y conectar conceptos, pero no "entiende" tus preguntas en un sentido humano. Usa algoritmos sofisticados para hacer coincidir tus palabras clave con el contenido de miles de millones de páginas y clasificar los resultados. La IA de texto es una versión mucho más avanzada de este principio, capaz de generar nuevo texto basado en esos patrones.</p>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusión: El Poder del Cálculo Inteligente</h2>
+            <p>¡Felicidades! Has completado tu primera inmersión en los fundamentos de la IA de texto. Ahora sabes que:</p>
+            <ul>
+                <li>La "inteligencia" de estas máquinas proviene de <strong>cálculos masivos y reconocimiento de patrones</strong>, no de un pensamiento consciente.</li>
+                <li>El texto se descompone en <strong>tokens</strong>.</li>
+                <li>Los <strong>embeddings</strong> dan a estos tokens representaciones numéricas que capturan relaciones de significado.</li>
+                <li>El <strong>entrenamiento</strong> es un proceso de ajuste matemático para optimizar la tarea del modelo.</li>
+            </ul>
+            <p>La Inteligencia Artificial es una herramienta increíblemente poderosa con un potencial que apenas estamos comenzando a explorar. Entender sus bases te permite no solo usarla mejor, sino también tener una visión más crítica e informada sobre sus capacidades y limitaciones.</p>
+            <p>¡Sigue aprendiendo y explorando! El viaje hacia la comprensión de la IA es continuo y fascinante.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Tu Nombre/Nombre del Proyecto. Todos los derechos reservados (o licencia Creative Commons, etc.).</p>
+        <p>Una página para desmitificar la IA.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
